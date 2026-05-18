@@ -13,7 +13,8 @@ export function SocketProvider({ children }) {
   useEffect(() => {
     if (!user) return;
 
-    const socket = io('/', {
+    const socketUrl = import.meta.env.VITE_API_URL || '/';
+    const socket = io(socketUrl, {
       auth: { userId: user.id },
       transports: ['websocket', 'polling'],
     });
