@@ -83,7 +83,7 @@ const syncDB = async () => {
       console.log('✅ Database synchronized');
     }
   } catch (err) {
-    console.error('❌ DB connection failed:', err.message);
+    console.error('❌ DB connection failed:', err);
     process.exit(1);
   }
 };
