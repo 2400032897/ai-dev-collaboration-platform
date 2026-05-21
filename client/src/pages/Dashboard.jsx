@@ -42,7 +42,7 @@ export default function Dashboard() {
       setWorkspaces(prev => [{ ...res.data.workspace, myRole: 'Owner' }, ...prev]);
       setShowCreate(false);
       setCreateForm({ name: '', description: '' });
-      addToast('Workspace created! 🎉', 'success');
+      addToast('Workspace created!', 'success');
       navigate(`/workspace/${res.data.workspace.slug}`);
     } catch (err) {
       addToast(err.response?.data?.error || 'Failed to create workspace', 'error');

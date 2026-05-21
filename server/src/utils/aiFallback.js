@@ -100,28 +100,28 @@ function generateStandupFallback(taskList) {
     else if (line.includes('[TODO]')) todo.push(line.replace('[TODO]', '').trim());
   });
 
-  let report = "✅ DONE\n";
+  let report = "DONE\n";
   if (done.length > 0) {
     done.forEach(t => { report += `- Finished: ${t}\n`; });
   } else {
     report += "- No tasks completed in the last 24 hours.\n";
   }
 
-  report += "\n🔄 IN PROGRESS\n";
+  report += "\nIN PROGRESS\n";
   if (inprogress.length > 0) {
     inprogress.forEach(t => { report += `- Actively working on: ${t}\n`; });
   } else {
     report += "- No tasks currently in progress.\n";
   }
 
-  report += "\n🚧 IN REVIEW / BLOCKERS\n";
+  report += "\nIN REVIEW / BLOCKERS\n";
   if (inreview.length > 0) {
     inreview.forEach(t => { report += `- Code review pending: ${t}\n`; });
   } else {
     report += "- No blockers or reviews pending.\n";
   }
 
-  report += "\n📋 TODO NEXT\n";
+  report += "\nTODO NEXT\n";
   if (todo.length > 0) {
     todo.slice(0, 3).forEach(t => { report += `- Up next: ${t}\n`; });
   } else {

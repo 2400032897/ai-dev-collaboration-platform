@@ -21,7 +21,7 @@ export default function Register() {
     setLoading(true);
     try {
       await register(form.name, form.email, form.password);
-      addToast('Account created! Welcome to DevCollab 🎉', 'success');
+      addToast('Account created! Welcome to DevCollab', 'success');
       navigate('/dashboard');
     } catch (err) {
       addToast(err.response?.data?.error || 'Registration failed', 'error');
@@ -39,11 +39,7 @@ export default function Register() {
 
       <div className="w-full max-w-md relative z-10 animate-slide-up">
         <div className="text-center mb-8">
-          <div className="w-14 h-14 bg-gradient-to-br from-primary-500 to-blue-500 rounded-2xl
-            flex items-center justify-center text-white font-bold text-xl mx-auto mb-4
-            shadow-lg shadow-primary-500/30">
-            DC
-          </div>
+          <img src="/devcollab-logo.svg" alt="DevCollab" className="w-14 h-14 mx-auto mb-4" />
           <h1 className="text-2xl font-bold text-white">Create your account</h1>
           <p className="text-gray-500 text-sm mt-1">Free forever for small teams</p>
         </div>

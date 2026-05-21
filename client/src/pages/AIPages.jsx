@@ -16,7 +16,7 @@ export function AIStandupPage() {
   return (
     <div className="flex-1 flex items-center justify-center p-8">
       <div className="text-gray-400 text-center">
-        <p className="text-4xl mb-3">🤖</p>
+        <p className="text-4xl mb-3"></p>
         <p className="text-lg font-semibold text-white mb-2">Standup Generator</p>
         <p className="text-sm">Use the "Standup" button on the Kanban board to generate a standup report.</p>
       </div>

@@ -279,7 +279,7 @@ export default function KanbanPage() {
             onClick={() => setShowStandup(true)}
             className="btn-secondary text-sm flex items-center gap-2"
           >
-            🤖 Standup
+            Standup
           </button>
           <button
             onClick={() => { setCreateStatus('todo'); setShowCreateTask(true); }}
@@ -430,7 +430,7 @@ function TaskCard({ task, onClick, isDragging }) {
           {/* Due date */}
           {task.due_date && (
             <span className={`text-xs ${isOverdue ? 'text-red-400' : 'text-gray-500'} flex items-center gap-1`}>
-              {isOverdue ? '⚠️' : '📅'}
+              {isOverdue ? '' : ''}
               {formatDistanceToNow(new Date(task.due_date), { addSuffix: true })}
             </span>
           )}

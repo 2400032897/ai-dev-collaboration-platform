@@ -28,7 +28,7 @@ export default function AITaskBreakdown({ projectId, workspaceId }) {
   return (
     <div className="space-y-6">
       <div>
-        <h2 className="text-xl font-bold text-white mb-1">⚡ AI Task Breakdown</h2>
+        <h2 className="text-xl font-bold text-white mb-1">AI Task Breakdown</h2>
         <p className="text-gray-500 text-sm">Describe a feature — AI breaks it into actionable tasks and adds them to your board</p>
       </div>
 
@@ -46,7 +46,7 @@ export default function AITaskBreakdown({ projectId, workspaceId }) {
           className="btn-primary flex items-center gap-2"
           id="breakdown-btn"
         >
-          {loading ? <Spinner size="sm" /> : '⚡'}
+          {loading ? <Spinner size="sm" /> : ''}
           {loading ? 'Breaking down...' : 'Break it Down → Add to Board'}
         </button>
       </div>
@@ -73,7 +73,7 @@ export default function AITaskBreakdown({ projectId, workspaceId }) {
             </div>
           ))}
           <div className="bg-green-500/10 border border-green-500/30 rounded-xl p-4">
-            <p className="text-green-400 text-sm">✅ All tasks have been added to your Kanban board!</p>
+            <p className="text-green-400 text-sm">All tasks have been added to your Kanban board!</p>
           </div>
         </div>
       )}

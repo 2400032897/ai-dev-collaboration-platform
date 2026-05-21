@@ -85,10 +85,10 @@ export default function AICodeReviewer() {
 
           {/* Collapsible sections */}
           {[
-            { key: 'bugs', label: '🐛 Bugs', color: 'text-red-400' },
-            { key: 'performance', label: '⚡ Performance', color: 'text-amber-400' },
-            { key: 'readability', label: '📖 Readability', color: 'text-blue-400' },
-            { key: 'security', label: '🔒 Security', color: 'text-purple-400' },
+            { key: 'bugs', label: 'Bugs', color: 'text-red-400' },
+            { key: 'performance', label: 'Performance', color: 'text-amber-400' },
+            { key: 'readability', label: 'Readability', color: 'text-blue-400' },
+            { key: 'security', label: 'Security', color: 'text-purple-400' },
           ].map(({ key, label, color }) => (
             <div key={key} className="card">
               <button

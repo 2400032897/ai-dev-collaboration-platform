@@ -64,7 +64,7 @@ const PORT = process.env.PORT || 5000;
 
 syncDB().then(() => {
   server.listen(PORT, () => {
-    console.log(`🚀 DevCollab server running on http://localhost:${PORT}`);
-    console.log(`🌍 Accepting requests from: ${process.env.CLIENT_URL}`);
+    console.log(`DevCollab server running on http://localhost:${PORT}`);
+    console.log(`Accepting requests from: ${process.env.CLIENT_URL}`);
   });
 });

@@ -77,23 +77,23 @@ WorkspaceMember.belongsTo(Workspace, { foreignKey: 'workspace_id' });
 const syncDB = async () => {
   try {
     await sequelize.authenticate();
-    console.log('✅ MySQL connected successfully');
+    console.log('MySQL connected successfully');
     try {
       if (process.env.DB_FORCE_SYNC === 'true') {
-        console.log('🔄 Force syncing database...');
+        console.log('Force syncing database...');
         await sequelize.sync({ force: true });
       } else {
         await sequelize.sync({ alter: true });
       }
-      console.log('✅ Database synchronized');
+      console.log('Database synchronized');
     } catch (syncErr) {
-      console.error('⚠️ Database sync failed:', syncErr.message);
-      console.log('🔄 Attempting standard sync fallback...');
+      console.error('Database sync failed:', syncErr.message);
+      console.log('Attempting standard sync fallback...');
       await sequelize.sync();
-      console.log('✅ Standard database synchronized');
+      console.log('Standard database synchronized');
     }
   } catch (err) {
-    console.error('❌ DB connection failed:', err);
+    console.error('DB connection failed:', err);
     process.exit(1);
   }
 };

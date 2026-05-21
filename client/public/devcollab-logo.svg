@@ -1,0 +1,16 @@
+<svg viewBox="0 0 200 100" xmlns="http://www.w3.org/2000/svg">
+  <!-- Orange background circle -->
+  <circle cx="100" cy="50" r="48" fill="#FF6B4A" opacity="0.1"/>
+  
+  <!-- Main logo text -->
+  <text x="100" y="65" font-family="Arial, sans-serif" font-size="48" font-weight="bold" text-anchor="middle" fill="#FF6B4A" letter-spacing="-2">dev</text>
+  
+  <!-- Sketchy effect lines for texture -->
+  <g stroke="#FF6B4A" stroke-width="1.5" opacity="0.4">
+    <path d="M 30 35 Q 35 32 40 35" fill="none"/>
+    <path d="M 50 28 Q 55 26 60 28" fill="none"/>
+    <path d="M 75 32 Q 80 30 85 32" fill="none"/>
+    <path d="M 120 30 Q 125 28 130 30" fill="none"/>
+    <path d="M 150 35 Q 155 33 160 35" fill="none"/>
+  </g>
+</svg>

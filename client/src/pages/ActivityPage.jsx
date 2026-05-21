@@ -59,7 +59,7 @@ export default function ActivityPage() {
   return (
     <div className="flex flex-col h-full">
       <div className="flex items-center justify-between px-6 py-4 border-b border-white/10">
-        <h2 className="text-lg font-semibold text-white">⚡ Activity Feed</h2>
+        <h2 className="text-lg font-semibold text-white">Activity Feed</h2>
       </div>
 
       <div className="flex-1 overflow-y-auto p-6 max-w-2xl mx-auto w-full">

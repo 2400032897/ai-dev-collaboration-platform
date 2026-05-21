@@ -39,14 +39,14 @@ export default function JoinWorkspacePage() {
         )}
         {status === 'success' && (
           <>
-            <p className="text-4xl mb-4">🎉</p>
+            <p className="text-4xl mb-4"></p>
             <p className="text-white font-semibold text-xl mb-2">Welcome!</p>
             <p className="text-gray-400">{message}. Redirecting to dashboard...</p>
           </>
         )}
         {status === 'error' && (
           <>
-            <p className="text-4xl mb-4">❌</p>
+            <p className="text-4xl mb-4"></p>
             <p className="text-red-400 font-medium">{message}</p>
             <button onClick={() => navigate('/dashboard')} className="btn-primary mt-4">
               Go to Dashboard

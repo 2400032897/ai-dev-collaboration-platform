@@ -18,7 +18,7 @@ exports.reviewCode = async (req, res) => {
     const isDummy = !process.env.CLAUDE_API_KEY || process.env.CLAUDE_API_KEY.includes('YOUR_KEY_HERE');
 
     if (isDummy) {
-      console.log('⚠️ Dummy Claude API key detected, using local code review fallback...');
+      console.log('Dummy Claude API key detected, using local code review fallback...');
       result = reviewCodeFallback(code, language);
     } else {
       try {
@@ -45,7 +45,7 @@ Keep each item under 15 words. Empty array if no issues in a category.`,
           result = { raw: message.content[0].text };
         }
       } catch (sdkErr) {
-        console.warn('⚠️ Anthropic SDK call failed, using local code review fallback:', sdkErr.message);
+        console.warn('Anthropic SDK call failed, using local code review fallback:', sdkErr.message);
         result = reviewCodeFallback(code, language);
       }
     }
@@ -79,7 +79,7 @@ exports.generateStandup = async (req, res) => {
     const isDummy = !process.env.CLAUDE_API_KEY || process.env.CLAUDE_API_KEY.includes('YOUR_KEY_HERE');
 
     if (isDummy) {
-      console.log('⚠️ Dummy Claude API key detected, using local standup generator fallback...');
+      console.log('Dummy Claude API key detected, using local standup generator fallback...');
       standup = generateStandupFallback(taskList);
     } else {
       try {
@@ -88,16 +88,16 @@ exports.generateStandup = async (req, res) => {
           max_tokens: 800,
           system: `You are a scrum master assistant. Given these task changes from the last 24 hours, write a concise daily standup report in this format:
 
-✅ DONE
+DONE
 - <task>
 
-🔄 IN PROGRESS
+IN PROGRESS
 - <task> (assigned to: <name>)
 
-🚧 IN REVIEW / BLOCKERS
+IN REVIEW / BLOCKERS
 - <task>
 
-📋 TODO NEXT
+TODO NEXT
 - <task>
 
 Be brief and professional. No preamble.`,
@@ -106,7 +106,7 @@ Be brief and professional. No preamble.`,
 
         standup = message.content[0].text;
       } catch (sdkErr) {
-        console.warn('⚠️ Anthropic SDK call failed, using local standup generator fallback:', sdkErr.message);
+        console.warn('Anthropic SDK call failed, using local standup generator fallback:', sdkErr.message);
         standup = generateStandupFallback(taskList);
       }
     }
@@ -132,7 +132,7 @@ exports.breakdownFeature = async (req, res) => {
     const isDummy = !process.env.CLAUDE_API_KEY || process.env.CLAUDE_API_KEY.includes('YOUR_KEY_HERE');
 
     if (isDummy) {
-      console.log('⚠️ Dummy Claude API key detected, using local feature breakdown fallback...');
+      console.log('Dummy Claude API key detected, using local feature breakdown fallback...');
       parsed = breakdownFeatureFallback(featureDescription);
     } else {
       try {
@@ -162,7 +162,7 @@ Generate 4-8 tasks. Order by logical implementation sequence. P0 = critical/bloc
           return res.status(500).json({ error: 'Failed to parse AI response', raw: message.content[0].text });
         }
       } catch (sdkErr) {
-        console.warn('⚠️ Anthropic SDK call failed, using local feature breakdown fallback:', sdkErr.message);
+        console.warn('Anthropic SDK call failed, using local feature breakdown fallback:', sdkErr.message);
         parsed = breakdownFeatureFallback(featureDescription);
       }
     }
@@ -218,7 +218,7 @@ Recent tasks: ${tasks.slice(0, 10).map(t => `${t.title} [${t.status}]`).join(', 
     const isDummy = !process.env.CLAUDE_API_KEY || process.env.CLAUDE_API_KEY.includes('YOUR_KEY_HERE');
 
     if (isDummy) {
-      console.log('⚠️ Dummy Claude API key detected, using local project health summary fallback...');
+      console.log('Dummy Claude API key detected, using local project health summary fallback...');
       summary = projectSummaryFallback(taskData);
     } else {
       try {
@@ -237,7 +237,7 @@ Under 150 words. Plain text, no markdown.`,
 
         summary = message.content[0].text;
       } catch (sdkErr) {
-        console.warn('⚠️ Anthropic SDK call failed, using local project health summary fallback:', sdkErr.message);
+        console.warn('Anthropic SDK call failed, using local project health summary fallback:', sdkErr.message);
         summary = projectSummaryFallback(taskData);
       }
     }

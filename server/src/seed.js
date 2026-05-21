@@ -10,10 +10,10 @@ const generateToken = () => crypto.randomBytes(32).toString('hex');
 async function seed() {
   try {
     await sequelize.authenticate();
-    console.log('✅ DB Connected');
+    console.log('DB Connected');
 
     await sequelize.sync({ force: true });
-    console.log('✅ Schema reset');
+    console.log('Schema reset');
 
     // ── Users (passwords hashed by beforeCreate hook) ──────────────────
     const [ankush, riya, dev] = await User.bulkCreate([
@@ -42,7 +42,7 @@ async function seed() {
         github_url: 'https://github.com/devpatel',
       },
     ], { individualHooks: true });
-    console.log('✅ Users created');
+    console.log('Users created');
 
     // ── Workspace ─────────────────────────────────────────────────────
     const workspace = await Workspace.create({
@@ -59,7 +59,7 @@ async function seed() {
       { workspace_id: workspace.id, user_id: riya.id, role: 'Admin' },
       { workspace_id: workspace.id, user_id: dev.id, role: 'Member' },
     ]);
-    console.log('✅ Workspace created with members');
+    console.log('Workspace created with members');
 
     // ── Projects ──────────────────────────────────────────────────────
     const frontendProject = await Project.create({
@@ -84,7 +84,7 @@ async function seed() {
       { project_id: apiProject.id, user_id: ankush.id },
       { project_id: apiProject.id, user_id: dev.id },
     ]);
-    console.log('✅ Projects created');
+    console.log('Projects created');
 
     // ── Tasks ─────────────────────────────────────────────────────────
     await Task.bulkCreate([
@@ -175,7 +175,7 @@ async function seed() {
         labels: ['security'], order_index: 0,
       },
     ]);
-    console.log('✅ 10 Tasks created');
+    console.log('10 Tasks created');
 
     // ── Snippets ──────────────────────────────────────────────────────
     await Snippet.bulkCreate([
@@ -351,7 +351,7 @@ async function apiGet<T>(url: string): Promise<ApiResponse<T>> {
         created_by: riya.id,
       },
     ]);
-    console.log('✅ 5 Snippets created');
+    console.log('5 Snippets created');
 
     // ── Wiki Pages ─────────────────────────────────────────────────────
     await WikiPage.bulkCreate([
@@ -370,7 +370,7 @@ async function apiGet<T>(url: string): Promise<ApiResponse<T>> {
               { type: 'listItem', content: [{ type: 'paragraph', content: [{ type: 'text', text: 'Use AI features to boost productivity' }] }] },
             ]},
             { type: 'heading', attrs: { level: 2 }, content: [{ type: 'text', text: 'Key Features' }] },
-            { type: 'paragraph', content: [{ type: 'text', text: '🚀 Real-time Kanban board with drag-and-drop | ✂️ Code Snippet Manager | 📖 Wiki Documentation | 🤖 AI-powered tools' }] },
+            { type: 'paragraph', content: [{ type: 'text', text: 'Real-time Kanban board with drag-and-drop | Code Snippet Manager | Wiki Documentation | AI-powered tools' }] },
           ],
         }),
         project_id: frontendProject.id,
@@ -401,17 +401,17 @@ async function apiGet<T>(url: string): Promise<ApiResponse<T>> {
         last_edited_by: dev.id,
       },
     ]);
-    console.log('✅ 2 Wiki pages created');
+    console.log('2 Wiki pages created');
 
-    console.log('\n🎉 Seed completed successfully!');
-    console.log('\n📋 Test credentials:');
+    console.log('\nSeed completed successfully!');
+    console.log('\nTest credentials:');
     console.log('  ankush@dev.com / password123 (Owner)');
     console.log('  riya@dev.com / password123 (Admin)');
     console.log('  dev@dev.com / password123 (Member)');
-    console.log('\n🔗 Workspace invite token:', workspace.invite_token);
+    console.log('\nWorkspace invite token:', workspace.invite_token);
     process.exit(0);
   } catch (err) {
-    console.error('❌ Seed failed:', err);
+    console.error('Seed failed:', err);
     process.exit(1);
   }
 }

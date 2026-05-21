@@ -23,10 +23,7 @@ export default function Landing() {
       {/* Navbar */}
       <nav className="relative z-10 flex items-center justify-between px-6 py-4 max-w-7xl mx-auto">
         <div className="flex items-center gap-2">
-          <div className="w-9 h-9 bg-gradient-to-br from-primary-500 to-blue-500 rounded-xl
-            flex items-center justify-center text-white font-bold shadow-lg shadow-primary-500/30">
-            DC
-          </div>
+          <img src="/devcollab-logo.svg" alt="DevCollab" className="w-9 h-9" />
           <span className="text-xl font-bold text-white">DevCollab</span>
         </div>
         <div className="flex items-center gap-3">
@@ -113,12 +110,12 @@ export default function Landing() {
 }
 
 const FEATURES = [
-  { icon: '📋', title: 'Real-time Kanban', description: 'Drag-and-drop board synced live across all team members via Socket.IO.' },
-  { icon: '✂️', title: 'Code Snippets', description: 'Save, search, and share code snippets with syntax highlighting in 10+ languages.' },
-  { icon: '📖', title: 'Wiki & Docs', description: 'Rich text wiki with TipTap editor, auto-save, and full version history.' },
-  { icon: '🤖', title: 'AI Assistant', description: 'Code reviewer, standup generator, task breakdown, and project summary — powered by Claude.' },
-  { icon: '🔔', title: 'Notifications', description: '@mention teammates in comments. Real-time notifications via Socket.IO.' },
-  { icon: '🔒', title: 'Role-based Access', description: 'Owner, Admin, Member, Viewer roles. Invite via secure token links.' },
+  { icon: '', title: 'Real-time Kanban', description: 'Drag-and-drop board synced live across all team members via Socket.IO.' },
+  { icon: '', title: 'Code Snippets', description: 'Save, search, and share code snippets with syntax highlighting in 10+ languages.' },
+  { icon: '', title: 'Wiki & Docs', description: 'Rich text wiki with TipTap editor, auto-save, and full version history.' },
+  { icon: '', title: 'AI Assistant', description: 'Code reviewer, standup generator, task breakdown, and project summary — powered by Claude.' },
+  { icon: '', title: 'Notifications', description: '@mention teammates in comments. Real-time notifications via Socket.IO.' },
+  { icon: '', title: 'Role-based Access', description: 'Owner, Admin, Member, Viewer roles. Invite via secure token links.' },
 ];
 
 const STATS = [

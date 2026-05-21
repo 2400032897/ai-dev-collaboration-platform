@@ -18,7 +18,7 @@ module.exports = (io) => {
       socket.data.projectId = projectId;
       socket.data.userName = userName;
       socket.data.userId = userId;
-      console.log(`📋 User ${userId} joined project:${projectId}`);
+      console.log(`User ${userId} joined project:${projectId}`);
     });
 
     socket.on('leave_project', ({ projectId }) => {

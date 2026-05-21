@@ -28,7 +28,7 @@ export default function StandupModal({ isOpen, onClose, projectId }) {
   };
 
   return (
-    <Modal isOpen={isOpen} onClose={onClose} title="🤖 Daily Standup Generator" size="md">
+    <Modal isOpen={isOpen} onClose={onClose} title="Daily Standup Generator" size="md">
       <div className="space-y-4">
         <p className="text-gray-400 text-sm">
           Generate a standup report based on task activity from the last 24 hours.

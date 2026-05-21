@@ -24,7 +24,7 @@ export default function AIProjectSummary({ projectId }) {
   return (
     <div className="space-y-6">
       <div>
-        <h2 className="text-xl font-bold text-white mb-1">📊 AI Project Summary</h2>
+        <h2 className="text-xl font-bold text-white mb-1">AI Project Summary</h2>
         <p className="text-gray-500 text-sm">Get a health report of your project powered by Claude AI</p>
       </div>
 
@@ -34,7 +34,7 @@ export default function AIProjectSummary({ projectId }) {
         className="btn-primary flex items-center gap-2"
         id="project-summary-btn"
       >
-        {loading ? <Spinner size="sm" /> : '📊'}
+        {loading ? <Spinner size="sm" /> : ''}
         {loading ? 'Analyzing...' : 'Summarize Project'}
       </button>
 

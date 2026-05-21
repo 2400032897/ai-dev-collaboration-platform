@@ -142,7 +142,7 @@ export default function WikiPageComponent() {
     <div className="flex flex-col h-full">
       {/* Header */}
       <div className="flex items-center justify-between px-6 py-4 border-b border-white/10 flex-shrink-0">
-        <h2 className="text-lg font-semibold text-white">📖 Wiki</h2>
+        <h2 className="text-lg font-semibold text-white">Wiki</h2>
         <div className="flex items-center gap-3">
           {saving && <span className="text-xs text-gray-500 flex items-center gap-1"><Spinner size="sm" /> Saving...</span>}
           {selectedPage && (
@@ -161,7 +161,7 @@ export default function WikiPageComponent() {
             {loading ? (
               <div className="flex justify-center py-4"><Spinner size="sm" /></div>
             ) : pages.length === 0 ? (
-              <EmptyState icon="📖" title="No pages" description="Create your first wiki page" />
+              <EmptyState icon="" title="No pages" description="Create your first wiki page" />
             ) : (
               pages.map(p => (
                 <button
@@ -234,7 +234,7 @@ export default function WikiPageComponent() {
             </>
           ) : (
             <EmptyState
-              icon="📖"
+              icon=""
               title="No page selected"
               description="Select a page from the list or create a new one"
               action={() => setShowCreate(true)}

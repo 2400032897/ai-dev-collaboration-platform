@@ -163,7 +163,7 @@ export default function WorkspacePage() {
                   <span className={`text-xs px-3 py-1 rounded-full font-medium ${workspace?.plan === 'pro'
                     ? 'bg-amber-500/20 text-amber-400 border border-amber-500/30'
                     : 'bg-gray-500/20 text-gray-400 border border-gray-500/30'}`}>
-                    {workspace?.plan === 'pro' ? '⭐ Pro Plan' : 'Free Plan'}
+                    {workspace?.plan === 'pro' ? 'Pro Plan' : 'Free Plan'}
                   </span>
                   <span className="text-sm text-gray-500">
                     {workspace?.members?.length} members
@@ -184,7 +184,7 @@ export default function WorkspacePage() {
           <h2 className="text-lg font-semibold text-white mb-4">Projects</h2>
           {workspace?.projects?.length === 0 ? (
             <div className="text-center py-16 text-gray-500">
-              <p className="text-4xl mb-3">📋</p>
+              <p className="text-4xl mb-3"></p>
               <p>No projects yet. Create your first one!</p>
               <button onClick={() => setShowCreateProject(true)} className="btn-primary mt-4">
                 Create Project
@@ -276,7 +276,7 @@ export default function WorkspacePage() {
           </div>
           {workspace?.plan === 'free' && (workspace?.projects?.length || 0) >= 3 && (
             <div className="bg-amber-500/10 border border-amber-500/30 rounded-lg p-3">
-              <p className="text-amber-400 text-sm">⚠️ Free plan allows max 3 projects.</p>
+              <p className="text-amber-400 text-sm">Free plan allows max 3 projects.</p>
             </div>
           )}
           <div className="flex gap-3 justify-end pt-2">
@@ -310,7 +310,7 @@ export default function WorkspacePage() {
             onClick={regenerateToken}
             className="text-xs text-gray-500 hover:text-gray-400 flex items-center gap-1"
           >
-            🔄 Regenerate link
+            Regenerate link
           </button>
         </div>
       </Modal>

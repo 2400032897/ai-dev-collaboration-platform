@@ -122,9 +122,9 @@ export default function SettingsPage() {
                 <span className="bg-gray-500/20 text-gray-400 text-xs px-3 py-1 rounded-full">Current</span>
               </div>
               <ul className="space-y-2 text-sm text-gray-400">
-                {['1 Workspace', '3 Projects', '5 Members', 'Kanban Board', 'Snippets & Wiki', '❌ AI Features'].map(f => (
+                {['1 Workspace', '3 Projects', '5 Members', 'Kanban Board', 'Snippets & Wiki', 'AI Features'].map(f => (
                   <li key={f} className="flex items-center gap-2">
-                    <span>{f.startsWith('❌') ? '' : '✓'}</span> {f}
+                    <span>{f.startsWith('AI Features') ? '' : '✓'}</span> {f}
                   </li>
                 ))}
               </ul>
@@ -141,12 +141,12 @@ export default function SettingsPage() {
                   <h3 className="text-lg font-semibold text-white">Pro</h3>
                   <p className="text-3xl font-black gradient-text mt-1">₹499<span className="text-base text-gray-400">/mo</span></p>
                 </div>
-                <span className="bg-primary-500/20 text-primary-400 text-xs px-3 py-1 rounded-full">⭐ Pro</span>
+                <span className="bg-primary-500/20 text-primary-400 text-xs px-3 py-1 rounded-full">Pro</span>
               </div>
               <ul className="space-y-2 text-sm text-gray-400 mb-5">
-                {['Unlimited Workspaces', 'Unlimited Projects', 'Unlimited Members', 'Kanban Board', 'Snippets & Wiki', '✅ All AI Features'].map(f => (
+                {['Unlimited Workspaces', 'Unlimited Projects', 'Unlimited Members', 'Kanban Board', 'Snippets & Wiki', 'All AI Features'].map(f => (
                   <li key={f} className="flex items-center gap-2">
-                    <span className="text-green-400">{f.startsWith('✅') ? '' : '✓'}</span> {f}
+                    <span className="text-green-400">{f.startsWith('All AI Features') ? '' : '✓'}</span> {f}
                   </li>
                 ))}
               </ul>
@@ -205,7 +205,7 @@ export default function SettingsPage() {
             )}
             {paymentStep === 'success' && (
               <div className="text-center py-6">
-                <p className="text-5xl mb-4">🎉</p>
+                <p className="text-5xl mb-4"></p>
                 <h3 className="text-xl font-bold text-white mb-2">Welcome to Pro!</h3>
                 <p className="text-gray-400 text-sm mb-6">You now have access to all AI features</p>
                 <button

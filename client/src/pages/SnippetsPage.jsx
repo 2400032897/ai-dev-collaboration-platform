@@ -113,7 +113,7 @@ export default function SnippetsPage() {
     <div className="flex flex-col h-full">
       {/* Header */}
       <div className="flex items-center justify-between px-6 py-4 border-b border-white/10 flex-shrink-0">
-        <h2 className="text-lg font-semibold text-white">✂️ Code Snippets</h2>
+        <h2 className="text-lg font-semibold text-white">Code Snippets</h2>
         <button onClick={() => setShowCreate(true)} className="btn-primary text-sm" id="new-snippet-btn">
           + New Snippet
         </button>
@@ -154,7 +154,7 @@ export default function SnippetsPage() {
             {loading ? (
               <div className="flex justify-center py-8"><Spinner /></div>
             ) : snippets.length === 0 ? (
-              <EmptyState icon="✂️" title="No snippets" description="Create your first snippet" />
+              <EmptyState icon="" title="No snippets" description="Create your first snippet" />
             ) : (
               snippets.map(s => (
                 <div

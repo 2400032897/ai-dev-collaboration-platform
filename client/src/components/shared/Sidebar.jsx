@@ -76,7 +76,7 @@ export default function Sidebar({ projectId, workspaceSlug, members = [] }) {
             className="w-full flex items-center justify-between px-3 py-2 text-xs font-semibold
               text-gray-600 uppercase tracking-wider hover:text-gray-400 transition-colors"
           >
-            <span>🤖 AI Tools</span>
+            <span>AI Tools</span>
             <svg
               className={`w-3 h-3 transition-transform ${aiExpanded ? 'rotate-90' : ''}`}
               fill="none" viewBox="0 0 24 24" stroke="currentColor"
